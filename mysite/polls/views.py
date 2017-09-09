@@ -4,9 +4,12 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
+from django.http import HttpResponse
 from .models import Question, Choice
 
 # Create your views here.
+def welcome(request):
+    return HttpResponse ( 'Welcome to my first django app' )
 def index(request):
     latest_question_list = Question.objects.all()
     context = {'latest_question_list': latest_question_list}
