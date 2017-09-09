@@ -1,3 +1,7 @@
+# env 
+python 2.7.12 
+django 1.11.5
+
 # installation of django
 ```shell
 sudo pip install django
