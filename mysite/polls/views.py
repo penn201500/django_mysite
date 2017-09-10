@@ -9,7 +9,7 @@ from .models import Question, Choice
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse ( 'Welcome to my first django app' )
+    return HttpResponse ( '测试中文！ Welcome to my first django app' )
 def index(request):
     latest_question_list = Question.objects.all()
     context = {'latest_question_list': latest_question_list}
