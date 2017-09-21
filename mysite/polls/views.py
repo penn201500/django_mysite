@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from .models import Question, Choice
+from .netdata import monitoring_network
 
 # Create your views here.
 def welcome(request):
@@ -36,3 +37,7 @@ def vote(request, question_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls:results', args = (p.id,)))
+
+def network(request):
+    monitoring_network()
+    return render(request, 'network.html')

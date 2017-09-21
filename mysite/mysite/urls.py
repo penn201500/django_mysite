@@ -20,5 +20,6 @@ from polls.views import welcome
 urlpatterns = [
     url(r'^$', welcome),
     url(r'^polls/', include('polls.urls', namespace = 'polls')),
+    url(r'^network/', include('polls.urls', namespace = 'polls')),
     url(r'^admin/', admin.site.urls),
 ]
